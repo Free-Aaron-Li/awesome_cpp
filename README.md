@@ -15,14 +15,17 @@
 
 ## 项目结构
 
-```text
+```txt
 .
-├── 1_basics            # C++ 基础语法示例
-│   └── src
-│       └── main.cpp    # 入门示例：Hello World
-├── Doxyfile            # Doxygen 配置文件
-├── CMakeLists.txt      # 项目根构建文件
-└── doxygen_tools       # Doxygen 相关辅助工具
+├── 1_basics         # C++ 基础语法示例
+│ ├── chapter0       # 第零章：环境搭建与第一个程序
+│ └── chapter1       # 第一章：类型与值类别
+├── doxygen_tools    # Doxygen 相关辅助工具
+├── .clang-format    # Clang-format 格式化配置文件
+├── .gitignore       # git 忽略文件配置
+├── CMakeLists.txt   # 项目根构建文件
+├── LICENSE          # 版权声明
+└── README.md        # 项目说明
 ```
 
 ## 如何构建
