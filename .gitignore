@@ -64,6 +64,7 @@ doxygen*.txt
 
 # Temporary files
 .output.txt
+*.tmp
 
 # bakup files
 smart_pointer.bak/
