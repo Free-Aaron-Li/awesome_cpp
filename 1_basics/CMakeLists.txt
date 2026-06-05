@@ -1,9 +1,15 @@
 add_executable(1_basics
         src/main.cpp
         include/1_basics.hpp
+        src/chapter0/hello_world.cpp
         src/chapter0/calc.cpp
         src/chapter0/age.cpp
         src/chapter0/convert.cpp
+        src/chapter0/run.cpp
+        src/chapter1/print_number.cpp
+        src/chapter1/run.cpp
+        src/chapter0/run.cpp
+        src/chapter1/sizeof_in_c.c
 )
 
 target_include_directories(1_basics

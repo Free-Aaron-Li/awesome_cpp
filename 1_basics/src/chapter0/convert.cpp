@@ -22,8 +22,7 @@
 #include "1_basics.hpp"
 
 namespace awesome_cpp::basics::chapter0 {
-    auto
-    convert() -> double {
+    auto convert() -> double {
         double      celsius{ 0 };
         double      fahrenheit{ 0 };
         std::string input{};
@@ -39,8 +38,8 @@ namespace awesome_cpp::basics::chapter0 {
             try {
                 celsius    = std::stod(input); /* string to double */
                 fahrenheit = celsius * 9.0 / 5.0 + 32.0;
-                std::cout << celsius << "°C = " << fahrenheit << "°F" <<
-                        std::endl;
+                std::cout << celsius << "°C = " << fahrenheit << "°F"
+                          << std::endl;
             } catch (const std::invalid_argument&) {
                 std::cout << "\n输入错误，请重新输入" << std::endl;
             } catch (const std::out_of_range&) {
@@ -49,4 +48,4 @@ namespace awesome_cpp::basics::chapter0 {
         }
         return fahrenheit;
     }
-} // namespace awesome_cpp::basics::chapter0
+}  // namespace awesome_cpp::basics::chapter0

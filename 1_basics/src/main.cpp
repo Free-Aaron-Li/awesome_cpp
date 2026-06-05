@@ -26,6 +26,7 @@
 
 #include "1_basics.hpp"
 
+
 /**
  * @brief 程序主入口函数
  * @param argc 命令行参数个数
@@ -44,26 +45,10 @@
  *
  * @see https://en.cppreference.com/cpp/language/main_function
  */
-
-namespace awesome_cpp::basics::chapter0 {
-
-    /**
-     * @brief 打印 Hello World 消息
-     * @ingroup grp_1_basics_code
-     */
-    auto
-    hello_world() -> void { std::cout << "Hello, World!" << std::endl; }
-
-} // namespace awesome_cpp::basics::chapter0
-
 int
 main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[]) {
-    namespace ch0 = awesome_cpp::basics::chapter0;
-
-    // ch0::hello_world();
-    // ch0::calc();
-    // ch0::age();
-    ch0::convert();
+    // awesome_cpp::basics::chapter0::run();
+    awesome_cpp::basics::chapter1::run();
     return 0;
 }
 

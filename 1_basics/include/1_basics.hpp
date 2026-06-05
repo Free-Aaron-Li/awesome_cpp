@@ -82,8 +82,12 @@
 #ifndef AWESOME_CPP_1_BASICS_HPP
 #define AWESOME_CPP_1_BASICS_HPP
 
+#include <cmath>
+#include <cstdint>
+#include <iomanip>
 #include <iostream>
 #include <limits>
+#include <string_view>
 
 /**
  * @namespace awesome_cpp::basics
@@ -100,9 +104,10 @@ namespace awesome_cpp::basics {
     namespace chapter0 {
         /**
          * @brief 打印 Hello World 消息
+         * @return int 函数状态值
          * @ingroup grp_1_basics_code
          */
-        void hello_world();
+        int hello_world();
 
         /**
          * @brief 执行简单的加法计算并输出结果
@@ -116,19 +121,24 @@ namespace awesome_cpp::basics {
         /**
          *  @brief 读取用户年龄，并输出一段包含年龄的问候语
          *  @return int 返回用户输入的年龄
-         *
          *  @ingroup grp_1_basics_code
          */
         int age();
 
         /**
          * @brief 摄氏度转华氏度
-         * @return 转换后华氏度温度
-         *
+         * @return double 转换后华氏度温度
          * @ingroup grp_1_basics_code
          */
         double convert();
-    } // namespace chapter0
+
+        /**
+         * @brief 运行第零章的所有示例
+         * @return int 函数状态值
+         * @ingroup grp_1_basics_code
+         */
+        int run();
+    }  // namespace chapter0
 
     /**
      * @namespace awesome_cpp::basics::chapter1
@@ -136,10 +146,116 @@ namespace awesome_cpp::basics {
      * @ingroup grp_1_basics_ch1
      */
     namespace chapter1 {
+        /**
+         * @brief 打印数值类型的范围信息
+         * @tparam T 要展示范围的数值类型
+         * @param type_name 类型名称，用于输出标题
+         * @return int 函数状态值
+         * @ingroup grp_1_basics_code
+         */
+        template<typename T>
+        int
+        print_type_range(const std::string_view type_name) {
+            std::cout << "=== " << type_name << " ===" << std::endl;
+            std::cout << "最小值：" << std::numeric_limits<T>::min()
+                      << std::endl;
+            std::cout << "最大值：" << std::numeric_limits<T>::max()
+                      << std::endl;
+            std::cout << "字节数：" << sizeof(T) << std::endl;
+            return 0;
+        }
 
-    }
+        /**
+         * @brief 打印基本整数类型在当前平台上的大小
+         * @return int 函数状态值
+         * @ingroup grp_1_basics_code
+         */
+        int print_integer();
 
-} // namespace awesome_cpp::basics
+        /**
+         * @brief 浮点数比较
+         *
+         * 简单测试，通过高精度输出，确定浮点数本质是近似值。
+         * @return int 函数状态值
+         * @ingroup grp_1_basics_code
+         */
+        int float_comparison();
+
+        /**
+         * @brief 判断两个双精度浮点数是否近似相等
+         *
+         * 该函数通过绝对误差和相对误差两种方式来判断两个浮点数是否足够接近，
+         * 避免了直接使用 == 比较浮点数所带来的精度问题。
+         *
+         * @param lval 第一个待比较的双精度浮点数
+         * @param rval 第二个待比较的双精度浮点数
+         * @param absolute_epsilon 绝对误差阈值，默认为 1e-12，适用于接近 0 的值
+         * @param relative_epsilon 相对误差阈值，默认为 1e-9，适用于数值较大的值
+         * @return bool 如果两个数在给定误差范围内相等则返回 true，否则返回
+         * false
+         *
+         * @note 比较逻辑：
+         * - 首先使用绝对误差判断：|x - y| <= absolute_epsilon
+         * - 若绝对误差判断不通过，则使用相对误差判断：|x - y| <= max(|x|, |y|)
+         * * relative_epsilon
+         *
+         * @ingroup grp_1_basics_code
+         */
+        bool is_approximately_equal(double lval, double rval,
+                                    double absolute_epsilon = 1e-12,
+                                    double relative_epsilon = 1e-9);
+
+        /**
+         * @brief 打印字符
+         * @return int 函数状态值
+         * @ingroup grp_1_basics_code
+         */
+        int print_char();
+
+        /**
+         * @brief 打印布尔值
+         * @return int 函数状态值
+         * @ingroup grp_1_basics_code
+         */
+        int print_bool();
+
+        /**
+         * @brief 获取各种数据类型的大小
+         * @return int 函数状态值
+         * @ingroup grp_1_basics_code
+         */
+        int sizeof_all();
+
+        /**
+         * @brief 演示浮点数精度陷阱
+         *
+         * 该函数展示浮点数运算中常见的精度问题：浮点数累加误差
+         * @return int 函数状态值
+         * @ingroup grp_1_basics_code
+         */
+        int float_precision_pitfalls();
+
+        /**
+         * @brief 运行第一章的所有示例
+         * @return int 函数状态值
+         * @ingroup grp_1_basics_code
+         */
+        int run();
+    }  // namespace chapter1
+
+}  // namespace awesome_cpp::basics
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+/**
+ * @brief 在 C 文件中测试 sizeof('A')
+ * @ingroup grp_1_basics_code
+ */
+void test_sizeof_in_c();
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // AWESOME_CPP_1_BASICS_HPP
 

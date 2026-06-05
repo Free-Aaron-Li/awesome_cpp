@@ -12,7 +12,7 @@ AllowShortIfStatementsOnASingleLine: false
 AllowShortLoopsOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: All
-AlwaysBreakAfterDefinitionReturnType: TopLevel
+AlwaysBreakAfterDefinitionReturnType: All
 AlwaysBreakAfterReturnType: None
 AlwaysBreakTemplateDeclarations: Yes
 BraceWrapping:
@@ -38,7 +38,7 @@ BreakConstructorInitializers: AfterColon
 BreakConstructorInitializersBeforeComma: false
 ColumnLimit: 80
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
-ContinuationIndentWidth: 8
+ContinuationIndentWidth: 10
 Cpp11BracedListStyle: false
 IncludeCategories:
   - Regex: '^<.*'

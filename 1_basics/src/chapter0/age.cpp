@@ -22,8 +22,7 @@
 #include "1_basics.hpp"
 
 namespace awesome_cpp::basics::chapter0 {
-    auto
-    age() -> int {
+    auto age() -> int {
         int age{ 0 };
 
         for (;;) {
@@ -54,10 +53,9 @@ namespace awesome_cpp::basics::chapter0 {
 
         if (age < 25) {
             std::cout << "是个学生。" << std::endl;
-        }
-        else if (age < 65) {
+        } else if (age < 65) {
             std::cout << "是个牛马。" << std::endl;
         }
         return age;
     }
-} // namespace awesome_cpp::basics::chapter0
+}  // namespace awesome_cpp::basics::chapter0
