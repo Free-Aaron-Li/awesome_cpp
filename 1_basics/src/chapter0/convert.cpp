@@ -22,7 +22,7 @@
 #include "1_basics.hpp"
 
 namespace awesome_cpp::basics::chapter0 {
-    auto convert() -> double {
+    auto test_00_03_3_convert() -> double {
         double      celsius{ 0 };
         double      fahrenheit{ 0 };
         std::string input{};

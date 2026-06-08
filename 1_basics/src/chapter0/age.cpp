@@ -22,7 +22,7 @@
 #include "1_basics.hpp"
 
 namespace awesome_cpp::basics::chapter0 {
-    auto age() -> int {
+    auto test_00_03_2_age() -> int {
         int age{ 0 };
 
         for (;;) {

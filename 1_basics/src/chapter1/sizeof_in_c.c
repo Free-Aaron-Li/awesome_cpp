@@ -32,9 +32,10 @@
  *
  * @return int - 函数状态值
  * @ingroup grp_1_basics_code
+ * @ingroup grp_test_problems
  */
 int
-test_sizeof_in_c(void) {
+test_01_00_2_test_sizeof_in_c(void) {
     printf("--- 从 C 文件中测试 ---\n");
     printf("sizeof('A') 在 C 中 = %zu\n", sizeof('A'));
     printf("sizeof(char) 在 C 中 = %zu\n", sizeof(char));

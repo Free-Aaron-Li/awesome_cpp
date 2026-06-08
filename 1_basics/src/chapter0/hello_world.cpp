@@ -25,7 +25,8 @@ namespace awesome_cpp::basics::chapter0 {
     /**
      * @brief 打印 Hello World 消息
      */
-    auto hello_world() -> int {
+    auto
+    test_00_03_1_hello_world() -> int {
         std::cout << "Hello, World!" << std::endl;
         return 0;
     }

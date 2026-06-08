@@ -69,6 +69,18 @@
  */
 
 /**
+ * @defgroup grp_1_basics_api 公开接口
+ * @brief 1_basics 模块对外暴露的函数声明与接口
+ * @ingroup grp_1_basics
+ */
+
+/**
+ * @defgroup grp_1_basics_problems 题目练习
+ * @brief 该项目包含所有测试题目的代码实现。
+ * @ingroup grp_1_basics
+ */
+
+/**
  * @file 1_basics.hpp
  * @brief 1_basics 项目的基础头文件
  * @ingroup grp_1_basics_files
@@ -82,6 +94,7 @@
 #ifndef AWESOME_CPP_1_BASICS_HPP
 #define AWESOME_CPP_1_BASICS_HPP
 
+#include <bit>
 #include <cmath>
 #include <cstdint>
 #include <iomanip>
@@ -92,7 +105,7 @@
 /**
  * @namespace awesome_cpp::basics
  * @brief C++ 基础示例项目的命名空间
- * @ingroup grp_1_basics
+ * @ingroup grp_1_basics_api
  */
 namespace awesome_cpp::basics {
 
@@ -103,13 +116,6 @@ namespace awesome_cpp::basics {
      */
     namespace chapter0 {
         /**
-         * @brief 打印 Hello World 消息
-         * @return int 函数状态值
-         * @ingroup grp_1_basics_code
-         */
-        int hello_world();
-
-        /**
          * @brief 执行简单的加法计算并输出结果
          * @return int 计算结果（两个输入数字之和）
          *
@@ -119,18 +125,28 @@ namespace awesome_cpp::basics {
         int calc();
 
         /**
+         * @brief 打印 Hello World 消息
+         * @return int 函数状态值
+         * @ingroup grp_1_basics_code
+         * @ingroup grp_1_basics_problems
+         */
+        int test_00_03_1_hello_world();
+
+        /**
          *  @brief 读取用户年龄，并输出一段包含年龄的问候语
          *  @return int 返回用户输入的年龄
          *  @ingroup grp_1_basics_code
+         * @ingroup grp_1_basics_problems
          */
-        int age();
+        int test_00_03_2_age();
 
         /**
          * @brief 摄氏度转华氏度
          * @return double 转换后华氏度温度
          * @ingroup grp_1_basics_code
+         * @ingroup grp_1_basics_problems
          */
-        double convert();
+        double test_00_03_3_convert();
 
         /**
          * @brief 运行第零章的所有示例
@@ -178,8 +194,9 @@ namespace awesome_cpp::basics {
          * 简单测试，通过高精度输出，确定浮点数本质是近似值。
          * @return int 函数状态值
          * @ingroup grp_1_basics_code
+         * @ingroup grp_1_basics_problems
          */
-        int float_comparison();
+        int test_01_00_3_float_comparison();
 
         /**
          * @brief 判断两个双精度浮点数是否近似相等
@@ -223,8 +240,9 @@ namespace awesome_cpp::basics {
          * @brief 获取各种数据类型的大小
          * @return int 函数状态值
          * @ingroup grp_1_basics_code
+         * @ingroup grp_1_basics_problems
          */
-        int sizeof_all();
+        int test_01_00_1_sizeof_all();
 
         /**
          * @brief 演示浮点数精度陷阱
@@ -236,6 +254,23 @@ namespace awesome_cpp::basics {
         int float_precision_pitfalls();
 
         /**
+         * @brief 类型转换示例
+         *
+         * 该函数演示了不同类型之间的转换，包括隐式转换、显式转换和布尔转换
+         * @return int 函数状态值
+         * @ingroup grp_1_basics_code
+         */
+        int type_conversion();
+
+        /**
+         * @brief 安全的温度转换
+         * @return int 函数状态值
+         * @ingroup grp_1_basics_code
+         * @ingroup grp_1_basics_problems
+         */
+        int test_01_01_3_saft_temperature_conversion();
+
+        /**
          * @brief 运行第一章的所有示例
          * @return int 函数状态值
          * @ingroup grp_1_basics_code
@@ -245,14 +280,15 @@ namespace awesome_cpp::basics {
 
 }  // namespace awesome_cpp::basics
 
-#ifdef __cplusplus
-extern "C" {
+#ifdef __cplusplus /* 当前这份代码，正在被 C++编译器处理吗？ */
+extern "C" {       /* 花括号内声明的函数请使用C语言的链接规约来处理 */
 #endif
 /**
  * @brief 在 C 文件中测试 sizeof('A')
  * @ingroup grp_1_basics_code
+ * @ingroup grp_1_basics_problems
  */
-void test_sizeof_in_c();
+void test_01_00_2_test_sizeof_in_c();
 #ifdef __cplusplus
 }
 #endif

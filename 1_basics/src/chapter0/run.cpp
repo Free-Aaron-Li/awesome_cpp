@@ -25,10 +25,10 @@ namespace awesome_cpp::basics::chapter0 {
     auto run() -> int {
         std::cout << "--- 第零章：环境搭建与第一个程序 ---" << std::endl;
 
-        hello_world();
+        test_00_03_1_hello_world();
         calc();
-        age();
-        convert();
+        test_00_03_2_age();
+        test_00_03_3_convert();
 
         return 0;
     }

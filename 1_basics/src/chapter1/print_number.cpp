@@ -95,7 +95,7 @@ namespace awesome_cpp::basics::chapter1 {
 
 
     auto
-    float_comparison() -> int {
+    test_01_00_3_float_comparison() -> int {
 
         constexpr float a{ 0.1f };
         constexpr float b{ 0.2f };
@@ -162,7 +162,7 @@ namespace awesome_cpp::basics::chapter1 {
     }
 
     int
-    sizeof_all() {
+    test_01_00_1_sizeof_all() {
         std::cout << "=== 基本类型 sizeof 汇总===" << std::endl;
         std::cout << "sizeof(bool)   = " << sizeof(bool) << std::endl;
         std::cout << "sizeof(char)   = " << sizeof(char) << std::endl;
@@ -187,7 +187,7 @@ namespace awesome_cpp::basics::chapter1 {
         std::cout << std::endl;
 
         /* 测试 C 语言下字符字面值大小 */
-        test_sizeof_in_c();
+        test_01_00_2_test_sizeof_in_c();
 
         return 0;
     }
@@ -233,6 +233,111 @@ namespace awesome_cpp::basics::chapter1 {
             std::cout << "value_double != 1.0l" << std::endl;
             std::cout << "差值为：" << (value_double - 1.0l) << std::endl;
         }
+        return 0;
+    }
+    int
+    type_conversion() {
+        /* 赋值转换：double -> int，小数部分直接截断 */
+        constexpr double pi{ 3.14159 };
+        constexpr int    truncated = pi;
+        std::cout << "3.14159 -> int = " << truncated << std::endl;
+
+        /* 算术转换：int + double -> double */
+        constexpr int    i{ 5 };
+        constexpr double d{ 2.5 };
+        constexpr auto   result = i + d;
+        std::cout << "5 + 2.5 = " << result << " (double)" << std::endl;
+
+        /* 布尔类型：零 -> false，零以外的任何值 -> true */
+        constexpr bool zero{ 0 };
+        constexpr bool non_zero = -3;
+        std::cout << "零 -> " << zero << std::endl;
+        std::cout << "非零 -> " << non_zero << std::endl;
+
+        /* 无符号转换 */
+        constexpr int          a{ -1 };
+        constexpr unsigned int b = a;
+        std::cout << "a = " << a << " -> b = " << b << std::endl;
+
+        /* 溢出 */
+        short s = 32767; /* short 的最大值为16位 */
+        s += 1;          /* s = -32768，赋值回 short 时发生截断 */
+        std::cout << "s = " << s << std::endl;
+
+        /* static_cast：普通类型转换 */
+        constexpr int    i1{ 42 };
+        constexpr double d1{ static_cast<double>(i1) };
+        constexpr double pi1{ 3.14159 };
+        constexpr int    truncated1{ static_cast<int>(pi1) };
+
+        std::cout << "i1 = " << i1 << " -> d1 = " << d1 << std::endl;
+        std::cout << "pi1 = " << pi1 << " -> truncated1 = " << truncated1
+                  << std::endl;
+
+        /* reinterpret_cast：重新解释底层的位模式 */
+        {
+            /* 场景一：void* 与类型指针之间的转换 */
+            int   val{ 100 };
+            void* pv{ &val };
+            int*  pvi{ reinterpret_cast<int*>(pv) };
+            std::cout << "void* -> *pvi = " << *pvi << std::endl;
+
+            /* 场景二：查看浮点数的底层位模式 */
+            float f{ 1.0f };
+            /* 注意这里犯严重的C++严格别名规则，可能导致未定义行为 */
+            const uint32_t reinterpret_cast_convertion
+                      = reinterpret_cast<uint32_t&>(f);
+            /* 这里意思是直接将f的4个字节拷贝至uint32_t对象上 */
+            const uint32_t bit_cast_convertion{ std::bit_cast<uint32_t>(f) };
+            std::cout << std::hex;
+            std::cout << "reinterpret_cast_convertion = "
+                      << reinterpret_cast_convertion << std::endl;
+            std::cout << "bit_cast_convertion = " << bit_cast_convertion
+                      << std::endl;
+        }
+
+        /* 数值精度 */
+        {
+            /* 场景一：整数除法陷阱 */
+            constexpr double result1{ 5 / 2 };
+            constexpr double result2{ static_cast<double>(5) / 2 };
+            std::cout << "5/2 = " << result1 << std::endl;
+            std::cout << "static_cast<double>(5)/2 = " << result2 << std::endl;
+
+            /* 场景二：浮点数比较的不可靠性 */
+            constexpr double a1{ 0.1 + 0.2 };
+            constexpr double a2{ 0.3 };
+            std::cout << std::boolalpha;
+            std::cout << "a1 == a2：" << (a1 == a2) << std::endl;
+
+            /* 正确做法 */
+            std::cout << "a1 == a2：" << is_approximately_equal(a1, a2)
+                      << std::endl;
+
+            /* 场景三：整数溢出 */
+            constexpr int max_int{ INT_MAX };
+            std::cout << std::dec;
+            /* 未定义行为 */
+            std::cout << "overflow_int = " << max_int + 1 << std::endl;
+
+            constexpr unsigned char uc{ 255 };
+            std::cout << "overflow_uc = " << static_cast<int>(uc + 1)
+                      << std::endl;
+        }
+
+        return 0;
+    }
+    int
+    test_01_01_3_saft_temperature_conversion() {
+        std::cout << std::fixed << std::setprecision(1);
+        std::cout << std::dec;
+        std::cout << "请输入摄氏温度：";
+        double celsius{};
+        std::cin >> celsius;
+        std::cout << celsius << " C = " << celsius * 9 / 5 + 32 << " F"
+                  << std::endl;
+
+        /* 这里我并不需要 static_cast，暂时没想到这个关键字该用在那个地方。 */
         return 0;
     }
 }  // namespace awesome_cpp::basics::chapter1
