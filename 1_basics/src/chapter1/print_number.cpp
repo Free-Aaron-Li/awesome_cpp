@@ -19,9 +19,6 @@
  * @ingroup grp_1_basics_files
  */
 
-
-#include <iomanip>
-
 #include "1_basics.hpp"
 
 namespace awesome_cpp::basics::chapter1 {
