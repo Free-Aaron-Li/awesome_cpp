@@ -33,7 +33,8 @@ namespace awesome_cpp::basics::chapter1 {
         // sizeof_all();
         // float_precision_pitfalls();
         // type_conversion();
-        test_01_01_3_saft_temperature_conversion();
+        // test_01_01_3_saft_temperature_conversion();
+        const_demo();
         return 0;
     }
 }  // namespace awesome_cpp::basics::chapter1
