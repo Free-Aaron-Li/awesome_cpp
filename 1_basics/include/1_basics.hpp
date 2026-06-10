@@ -271,27 +271,6 @@ namespace awesome_cpp::basics {
         int test_01_01_3_saft_temperature_conversion();
 
         /**
-         * @brief 演示常量的使用
-         *
-         * 该函数演示了常量的使用，包括常量的定义、constexpr、常量与指针、
-         * 常量与引用。
-         * @return int 函数状态值
-         * @ingroup grp_1_basics_code
-         */
-        int const_demo();
-
-        /**
-         * @brief 演示圆的面积计算
-         *
-         * 该函数演示了圆的面积计算，包括常量的使用。
-         * @param radius 圆的半径
-         * @return int 函数状态值
-         * @ingroup grp_1_basics_code
-         * @ingroup grp_1_basics_problems
-         */
-        double test_01_02_2_circle_area(double radius);
-
-        /**
          * @brief 运行第一章的所有示例
          * @return int 函数状态值
          * @ingroup grp_1_basics_code

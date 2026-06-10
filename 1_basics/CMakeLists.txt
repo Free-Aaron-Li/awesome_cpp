@@ -10,7 +10,6 @@ add_executable(1_basics
         src/chapter1/run.cpp
         src/chapter0/run.cpp
         src/chapter1/sizeof_in_c.c
-        src/chapter1/const.cpp
 )
 
 target_include_directories(1_basics
