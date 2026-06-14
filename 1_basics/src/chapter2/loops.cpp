@@ -31,18 +31,19 @@ namespace awesome_cpp::basics::chapter2 {
             }
             std::cout << std::endl;
         }
+        return 0;
     }
 
     auto
     guess_number_game() -> int {
-        constexpr int kSecret{ 42 };
-        int           guess{ 0 };
-        int           attempts_nums{ 0 };
+        int guess{ 0 };
+        int attempts_nums{ 0 };
 
         std::cout << "=== 猜数字游戏 ===" << std::endl;
         std::cout << "我想你一个1～100之间的数字，你来猜！" << std::endl;
 
         for (;;) {
+            constexpr int kSecret{ 42 };
             std::cout << "你的猜测是：";
             if (!(std::cin >> guess)) {
                 std::cout << "输入错误！" << std::endl;

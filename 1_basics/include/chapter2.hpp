@@ -21,8 +21,11 @@
  * @brief 第二章：控制流
  * @ingroup grp_1_basics_ch2
  */
+#include <array>
+#include <cctype>
 #include <iomanip>
 #include <iostream>
+#include <string>
 
 namespace awesome_cpp::basics::chapter2 {
     /**
@@ -122,6 +125,37 @@ namespace awesome_cpp::basics::chapter2 {
      * @ingroup grp_1_basics_problems
      */
     int test_02_01_4_print_rhombus();
+
+    /**
+     * @brief range-for 循环应用
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     */
+    int range_for();
+
+    /**
+     * @brief 找出最大数
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
+     */
+    int test_02_02_1_find_max_num();
+
+    /**
+     * @brief 统计元音字母数量
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
+     */
+    int test_02_02_2_statistical_vowels();
+
+    /**
+     * @brief 将数组中所有负数取绝对值
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
+     */
+    int test_02_02_3_modify_negative_num();
 
     /**
      * @brief 运行第二章第所有示例及测试

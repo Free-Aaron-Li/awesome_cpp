@@ -17,6 +17,7 @@ add_executable(1_basics
         src/chapter2/conditional.cpp
         src/chapter2/run.cpp
         src/chapter2/loops.cpp
+        src/chapter2/range_for.cpp
 )
 
 target_include_directories(1_basics

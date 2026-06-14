@@ -33,7 +33,11 @@ namespace awesome_cpp::basics::chapter2 {
         // test_02_01_1_print_hollow_square();
         // test_02_01_2_calculate_factorial();
         // test_02_01_3_find_prime_num();
-        test_02_01_4_print_rhombus();
+        // test_02_01_4_print_rhombus();
+        // range_for();
+        // test_02_02_1_find_max_num();
+        // test_02_02_2_statistical_vowels();
+        test_02_02_3_modify_negative_num();
         return 0;
     }
 }  // namespace awesome_cpp::basics::chapter2
