@@ -1,7 +1,7 @@
 # 1. 最低 CMake 版本要求
 cmake_minimum_required(VERSION 4.2)
 # 2. 项目名称，版本号，支持语言
-project(awesome_cpp VERSION 0.2.0 LANGUAGES C CXX)
+project(awesome_cpp VERSION 0.2.1 LANGUAGES C CXX)
 
 # 3. C++ 标准说明
 set(CMAKE_CXX_STANDARD 23)
