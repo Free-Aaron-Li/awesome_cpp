@@ -22,9 +22,8 @@
 #ifndef AWESOME_CPP_BASICS_CHAPTER1_HPP
 #define AWESOME_CPP_BASICS_CHAPTER1_HPP
 
-#include <bit>
+#include <climits>
 #include <cmath>
-#include <cstdint>
 #include <iomanip>
 #include <iostream>
 #include <limits>

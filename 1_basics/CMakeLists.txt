@@ -13,6 +13,9 @@ add_executable(1_basics
         src/chapter1/sizeof_in_c.c
         src/chapter1/const.cpp
         src/chapter1/values.cpp
+        include/chapter2.hpp
+        src/chapter2/conditional.cpp
+        src/chapter2/run.cpp
 )
 
 target_include_directories(1_basics
