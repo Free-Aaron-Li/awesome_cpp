@@ -1,6 +1,8 @@
 add_executable(1_basics
         src/main.cpp
         include/1_basics.hpp
+        include/chapter0.hpp
+        include/chapter1.hpp
         src/chapter0/hello_world.cpp
         src/chapter0/calc.cpp
         src/chapter0/age.cpp
@@ -10,6 +12,7 @@ add_executable(1_basics
         src/chapter1/run.cpp
         src/chapter1/sizeof_in_c.c
         src/chapter1/const.cpp
+        src/chapter1/values.cpp
 )
 
 target_include_directories(1_basics

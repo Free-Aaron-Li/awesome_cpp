@@ -19,7 +19,7 @@
  * @ingroup grp_1_basics_ch0
  */
 
-#include "1_basics.hpp"
+#include "chapter0.hpp"
 
 namespace awesome_cpp::basics::chapter0 {
 
