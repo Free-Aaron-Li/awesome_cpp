@@ -15,7 +15,7 @@
 
 /**
  * @file conditional.cpp
- * @brief 控制流应用的实现
+ * @brief 条件语句应用的实现
  * @ingroup grp_1_basics_files
  */
 
@@ -26,17 +26,13 @@ namespace awesome_cpp::basics::chapter2 {
     grade_by_if(const int score) -> char {
         if (score >= 90) {
             return 'A';
-        }
-        else if (score >= 80) {
+        } else if (score >= 80) {
             return 'B';
-        }
-        else if (score >= 70) {
+        } else if (score >= 70) {
             return 'C';
-        }
-        else if (score >= 60) {
+        } else if (score >= 60) {
             return 'D';
-        }
-        else {
+        } else {
             return 'F';
         }
     }
@@ -78,8 +74,7 @@ namespace awesome_cpp::basics::chapter2 {
 
         if (const auto diff = score - 60; diff >= 0) {
             std::cout << "成绩大于等于60分，差值为：" << diff << std::endl;
-        }
-        else {
+        } else {
             std::cout << "成绩低于60分，距离及格线差还：" << -diff << std::endl;
         }
 
@@ -100,12 +95,10 @@ namespace awesome_cpp::basics::chapter2 {
         if (const auto diff = num - 0; diff >= 0) {
             if (diff == 0) {
                 std::cout << num << " 是0" << std::endl;
-            }
-            else {
+            } else {
                 std::cout << num << " 是正数" << std::endl;
             }
-        }
-        else {
+        } else {
             std::cout << num << " 是负数" << std::endl;
         }
 
@@ -196,8 +189,7 @@ namespace awesome_cpp::basics::chapter2 {
                         std::cout << "日期合法！" << std::endl;
                         return 0;
                     }
-                }
-                else {
+                } else {
                     if (day <= 28) {
                         std::cout << "日期合法！" << std::endl;
                         return 0;

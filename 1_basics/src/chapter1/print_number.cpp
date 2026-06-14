@@ -90,7 +90,6 @@ namespace awesome_cpp::basics::chapter1 {
         return 0;
     }
 
-
     auto
     test_01_00_3_float_comparison() -> int {
 
@@ -107,8 +106,7 @@ namespace awesome_cpp::basics::chapter1 {
 
         if constexpr (c == 0.3f) {
             std::cout << "a + b == 0.3f" << std::endl;
-        }
-        else {
+        } else {
             std::cout << "a + b != 0.3f" << std::endl;
             std::cout << "差值：" << (c - 0.3f) << std::endl;
         }
@@ -188,6 +186,7 @@ namespace awesome_cpp::basics::chapter1 {
 
         return 0;
     }
+
     int
     float_precision_pitfalls() {
         float  value_float{ 0.0f };
@@ -212,8 +211,7 @@ namespace awesome_cpp::basics::chapter1 {
 
         if (is_approximately_equal(value_float, 1.0f)) {
             std::cout << "value_float == 1.0f" << std::endl;
-        }
-        else {
+        } else {
             std::cout << "value_float != 1.0f" << std::endl;
             std::cout << "差值为：" << (value_float - 1.0f) << std::endl;
         }
@@ -225,13 +223,13 @@ namespace awesome_cpp::basics::chapter1 {
 
         if (is_approximately_equal(value_double, 1.0l)) {
             std::cout << "value_double == 1.0l" << std::endl;
-        }
-        else {
+        } else {
             std::cout << "value_double != 1.0l" << std::endl;
             std::cout << "差值为：" << (value_double - 1.0l) << std::endl;
         }
         return 0;
     }
+
     int
     type_conversion() {
         /* 赋值转换：double -> int，小数部分直接截断 */
@@ -324,6 +322,7 @@ namespace awesome_cpp::basics::chapter1 {
 
         return 0;
     }
+
     int
     test_01_01_3_saft_temperature_conversion() {
         std::cout << std::fixed << std::setprecision(1);

@@ -16,13 +16,14 @@
 #ifndef AWESOME_CPP_CHAPTER2_HPP
 #define AWESOME_CPP_CHAPTER2_HPP
 
-#include <iostream>
-
 /**
  * @namespace awesome_cpp::basics::chapter2
  * @brief 第二章：控制流
  * @ingroup grp_1_basics_ch2
  */
+#include <iomanip>
+#include <iostream>
+
 namespace awesome_cpp::basics::chapter2 {
     /**
      * @brief 根据分数返回成绩等级（使用if-else）
@@ -39,27 +40,88 @@ namespace awesome_cpp::basics::chapter2 {
     char grade_by_switch(int score);
 
     /**
-     * @brief 判定百分制成绩所处等级。
+     * @brief 判定百分制成绩所处等级
      * @return int 函数状态值
      * @ingroup grp_1_basics_code
      */
     int conditional();
 
     /**
-     * @brief 判定数字正负。
+     * @brief 判定数字正负
      * @return int 函数状态值
      * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
      */
     int test_02_00_1_determine_num();
 
     /**
-     * @brief 简单的表达式计算。
+     * @brief 简单的表达式计算
      * @return int 函数状态值
      * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
      */
     int test_02_00_2_simple_calc();
 
+    /**
+     * @brief 检查日期时候合法
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
+     */
     int test_02_00_3_date_check();
+
+    /**
+     * @brief 打印乘法表
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     */
+    int print_multiplication_table();
+
+    /**
+     * @brief 猜数字游戏
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     */
+    int guess_number_game();
+
+    /**
+     * @brief 打印金字塔
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     */
+    int print_pyramid();
+
+    /**
+     * @brief 打印空心正方形
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
+     */
+    int test_02_01_1_print_hollow_square();
+
+    /**
+     * @brief 计算阶乘
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
+     */
+    int test_02_01_2_calculate_factorial();
+
+    /**
+     * @brief 找出素数
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
+     */
+    int test_02_01_3_find_prime_num();
+
+    /**
+     * @brief 打印菱形
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
+     */
+    int test_02_01_4_print_rhombus();
 
     /**
      * @brief 运行第二章第所有示例及测试

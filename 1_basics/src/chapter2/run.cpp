@@ -26,7 +26,14 @@ namespace awesome_cpp::basics::chapter2 {
         // conditional();
         // test_02_00_1_determine_num();
         // test_02_00_2_simple_calc();
-        test_02_00_3_date_check();
+        // test_02_00_3_date_check();
+        // print_multiplication_table();
+        // guess_number_game();
+        // print_pyramid();
+        // test_02_01_1_print_hollow_square();
+        // test_02_01_2_calculate_factorial();
+        // test_02_01_3_find_prime_num();
+        test_02_01_4_print_rhombus();
         return 0;
     }
 }  // namespace awesome_cpp::basics::chapter2
