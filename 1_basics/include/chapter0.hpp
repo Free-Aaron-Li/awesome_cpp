@@ -66,7 +66,7 @@ namespace awesome_cpp::basics::chapter0 {
     /**
      * @brief 运行第零章的所有示例
      * @return int 函数状态值
-     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_ch0
      */
     int run();
 }  // namespace awesome_cpp::basics::chapter0

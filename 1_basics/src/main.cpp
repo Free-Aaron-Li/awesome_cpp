@@ -26,7 +26,6 @@
 
 #include "1_basics.hpp"
 
-
 /**
  * @brief 程序主入口函数
  * @param argc 命令行参数个数
@@ -49,7 +48,8 @@ int
 main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[]) {
     // awesome_cpp::basics::chapter0::run();
     // awesome_cpp::basics::chapter1::run();
-    awesome_cpp::basics::chapter2::run();
+    // awesome_cpp::basics::chapter2::run();
+    awesome_cpp::basics::chapter3::run();
     return 0;
 }
 

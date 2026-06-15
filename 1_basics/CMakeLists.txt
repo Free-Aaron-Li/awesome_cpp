@@ -18,6 +18,9 @@ add_executable(1_basics
         src/chapter2/run.cpp
         src/chapter2/loops.cpp
         src/chapter2/range_for.cpp
+        include/chapter3.hpp
+        src/chapter3/functions.cpp
+        src/chapter3/run.cpp
 )
 
 target_include_directories(1_basics

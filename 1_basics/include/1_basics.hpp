@@ -58,13 +58,30 @@
 
 /**
  * @defgroup grp_1_basics_ch1 第一章：类型与值类别
- * @brief 介绍 C++ 中的基本类型及其值类别。
+ * @brief 介绍 C++ 中的基本类型及其值类别，包括：
+ * - 基本数据类型
+ * - 类型转换
+ * - @c const 初探
+ * - 值类别简介
  * @ingroup grp_1_basics
  */
 
 /**
  * @defgroup grp_1_basics_ch2 第二章：控制流
- * @brief 介绍 C++ 中的控制流语句。
+ * @brief 介绍 C++ 中的控制流语句，包括：
+ * - 条件语句
+ * - 循环语句
+ * - @c range-for 语句
+ * @ingroup grp_1_basics
+ */
+
+/**
+ * @defgroup grp_1_basics_ch3 第三章：函数
+ * @brief 介绍 C++ 中的函数，包括：
+ * - 函数基础
+ * - 参数传递方式
+ * - 重载与默认参数
+ * - inline 与 constexpr 函数
  * @ingroup grp_1_basics
  */
 
@@ -112,6 +129,8 @@
 #include "chapter1.hpp"
 // 引入第二章相关的头文件：控制流
 #include "chapter2.hpp"
+// 引入第三章相关的头文件：函数
+#include "chapter3.hpp"
 
 #endif  // AWESOME_CPP_1_BASICS_HPP
 

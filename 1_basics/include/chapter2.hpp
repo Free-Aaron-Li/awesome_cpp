@@ -32,6 +32,7 @@ namespace awesome_cpp::basics::chapter2 {
      * @brief 根据分数返回成绩等级（使用if-else）
      * @param score 百分制分数
      * @return 等级
+     * @ingroup grp_1_basics_code
      */
     char grade_by_if(int score);
 
@@ -39,6 +40,7 @@ namespace awesome_cpp::basics::chapter2 {
      * @brief 根据分数返回成绩等级（使用switch）
      * @param score 百分制分数
      * @return 等级
+     * @ingroup grp_1_basics_code
      */
     char grade_by_switch(int score);
 

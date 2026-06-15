@@ -195,7 +195,7 @@ namespace awesome_cpp::basics::chapter1 {
     /**
      * @brief 运行第一章的所有示例
      * @return int 函数状态值
-     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_ch1
      */
     int run();
 }  // namespace awesome_cpp::basics::chapter1
