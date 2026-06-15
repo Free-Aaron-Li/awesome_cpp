@@ -19,7 +19,6 @@
  * @ingroup grp_1_basics_files
  */
 
-#include <stdexcept>
 
 #include "chapter3.hpp"
 

@@ -22,15 +22,27 @@
 #include "chapter3.hpp"
 
 namespace awesome_cpp::basics::chapter3 {
+
     auto
     run() -> int {
         // functions();
+
         // int gcd = { test_03_00_1_gcd(48, 30) };
         // printf("gcd = %d\n", gcd);
+
         // test_03_00_2_is_prime(100);
-        DivResult result{ div_mod(17, 5) };
-        std::cout << "商：" << result.quotient << "，余：" << result.remainder
-                  << std::endl;
+
+        // DivResult result{ div_mod(17, 5) };
+        // std::cout << "商：" << result.quotient << "，余：" << result.remainder
+        //           << std::endl;
+
+        // passing();
+        double      lhs{ 27.5 };
+        double      rhs{ 29.9 };
+        std::string lhs_str{ "hello" };
+        std::string rhs_str{ "world" };
+        test_03_01_1_swap_values(lhs, rhs);
+        test_03_01_1_swap_values(lhs_str, rhs_str);
         return 0;
     }
 }  // namespace awesome_cpp::basics::chapter3

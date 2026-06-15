@@ -23,7 +23,9 @@
  */
 
 #include <array>
+#include <chrono>
 #include <iostream>
+#include <stdexcept>
 #include <string>
 
 namespace awesome_cpp::basics::chapter3 {
@@ -112,7 +114,80 @@ namespace awesome_cpp::basics::chapter3 {
         int remainder;  ///< 余数
     };
 
+    /**
+     * @brief 整数除法
+     * @param dividend 被除数
+     * @param divisor 除数
+     * @return DivResult 除法结果结构体
+     * @ingroup grp_1_basics_code
+     */
     DivResult div_mod(int dividend, int divisor);
+
+    /**
+     * @brief 交换两个整数的值
+     * @param lhs 第一个整数
+     * @param rhs 第二个整数
+     * @ingroup grp_1_basics_code
+     */
+    void swap_values(int& lhs, int& rhs);
+
+    /**
+     * @brief 大数据结构体
+     *
+     * 用于测试函数参数传递方式
+     */
+    struct BigData {
+        int payload[4096];  ///< 大数据载荷
+    };
+
+    /**
+     * @brief 求大数据载荷的和（值传递版）
+     *
+     * @param data 大数据结构体
+     * @return long 大数据载荷的和
+     */
+    long sum_by_value(BigData data);
+
+    /**
+     * @brief 求大数据载荷的和（常量引用传递版）
+     *
+     * @param data 大数据结构体
+     * @return long 大数据载荷的和
+     */
+    long sum_by_const_ref(const BigData& data);
+
+    /**
+     * @brief 构建问候语
+     * @note 使用 @c const 引用笔名啊字符串拷贝，同时支持右值绑定。
+     * @param name 用户姓名
+     * @return std::string 问候语
+     */
+    std::string build_greeting(const std::string& name);
+
+    /**
+     * @brief 参数传递方式应用的实现
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_ch3
+     */
+    int passing();
+
+    /**
+     * @brief 交换两个双精度浮点数的值
+     * @param lhs 第一个双精度浮点数
+     * @param rhs 第二个双精度浮点数
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     */
+    int test_03_01_1_swap_values(double& lhs, double& rhs);
+
+    /**
+     * @brief 交换两个字符串的值
+     * @param lhs 第一个字符串
+     * @param rhs 第二个字符串
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     */
+    int test_03_01_1_swap_values(std::string& lhs, std::string& rhs);
 
     /**
      * @brief 运行第三章第所有示例及测试
