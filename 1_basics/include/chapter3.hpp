@@ -188,6 +188,109 @@ namespace awesome_cpp::basics::chapter3 {
      * @ingroup grp_1_basics_code
      */
     int test_03_01_1_swap_values(std::string& lhs, std::string& rhs);
+    /**
+     * @brief 打印整数值
+     * @param value 要打印的整数
+     * @ingroup grp_1_basics_code
+     */
+    void print(int value);
+
+    /**
+     * @brief 打印双精度浮点数值
+     * @param value 要打印的双精度浮点数
+     * @ingroup grp_1_basics_code
+     */
+    void print(double value);
+
+    /**
+     * @brief 打印字符串
+     * @param str 要打印的C风格字符串
+     * @ingroup grp_1_basics_code
+     */
+    void print(const char* str);
+
+    /**
+     * @brief 绘制矩形
+     * @param width 矩形宽度
+     * @param height 矩形高度
+     * @param fill 是否填充，默认为false
+     * @param brush 绘制字符，默认为'#'
+     * @ingroup grp_1_basics_code
+     */
+    void draw_rect(int width, int height, bool fill = false, char brush = '#');
+
+    /**
+     * @brief 缩放值（单参数版本）
+     * @param value 原始值
+     * @ingroup grp_1_basics_code
+     */
+    void scale_value(int value);
+
+    /**
+     * @brief 缩放值（双参数版本）
+     * @param value 原始值
+     * @param factor 缩放因子
+     * @ingroup grp_1_basics_code
+     */
+    void scale_value(int value, int factor);
+
+    /**
+     * @brief 重载与默认参数应用的实现
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     */
+    int overload();
+
+    /**
+     * @brief 求两个整数中的最大值
+     * @param value1 第一个整数
+     * @param value2 第二个整数
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     */
+    int test_03_02_1_max_value(int value1, int value2);
+
+    /**
+     * @brief 求两个双精度浮点数中的最大值
+     * @param value1 第一个双精度浮点数
+     * @param value2 第二个双精度浮点数
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     */
+    int test_03_02_1_max_value(double value1, double value2);
+
+    /**
+     * @brief 求两个C风格字符串的字典序最大值
+     * @param value1 第一个C风格字符串
+     * @param value2 第二个C风格字符串
+     * @return int 函数状态值
+     * @ingroup grp_1_basics_code
+     */
+    int test_03_02_1_max_value(const char* value1, const char* value2);
+
+    /**
+     * @brief 记录日志消息
+     * @param text 日志文本内容
+     * @param level 日志级别，默认为"INFO"
+     * @param show_timestamp 是否显示时间戳，默认为false
+     * @ingroup grp_1_basics_code
+     */
+    void test_03_02_2_log_message(const char* text, const char* level = "INFO",
+                                  bool show_timestamp = false);
+
+    /**
+     * @brief 函数重载测试（整数参数版本）
+     * @param x 整数参数
+     * @ingroup grp_1_basics_code
+     */
+    void test_03_02_3_func(int x);
+
+    /**
+     * @brief 函数重载测试（短整型参数版本）
+     * @param x 短整型参数
+     * @ingroup grp_1_basics_code
+     */
+    void test_03_02_3_func(short x);
 
     /**
      * @brief 运行第三章第所有示例及测试

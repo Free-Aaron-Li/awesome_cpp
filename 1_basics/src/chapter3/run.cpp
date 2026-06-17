@@ -37,12 +37,24 @@ namespace awesome_cpp::basics::chapter3 {
         //           << std::endl;
 
         // passing();
-        double      lhs{ 27.5 };
-        double      rhs{ 29.9 };
-        std::string lhs_str{ "hello" };
-        std::string rhs_str{ "world" };
-        test_03_01_1_swap_values(lhs, rhs);
-        test_03_01_1_swap_values(lhs_str, rhs_str);
+
+        // double      lhs{ 27.5 };
+        // double      rhs{ 29.9 };
+        // std::string lhs_str{ "hello" };
+        // std::string rhs_str{ "world" };
+        // test_03_01_1_swap_values(lhs, rhs);
+        // test_03_01_1_swap_values(lhs_str, rhs_str);
+
+        // test_03_02_1_max_value(3, 7);
+        // test_03_02_1_max_value(2.5, 1.8);
+        // test_03_02_1_max_value("apple", "banana");
+
+        // log_message("This is a log message");
+        // log_message("Another log message", "DEBUG");
+        // log_message("A third log message", "ERROR", true);
+
+        test_03_02_3_func('A'); /* char -> int，重载决议：类型提升 > 类型转换 */
+
         return 0;
     }
 }  // namespace awesome_cpp::basics::chapter3
