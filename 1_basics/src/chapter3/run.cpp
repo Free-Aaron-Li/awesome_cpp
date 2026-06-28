@@ -53,7 +53,13 @@ namespace awesome_cpp::basics::chapter3 {
         // log_message("Another log message", "DEBUG");
         // log_message("A third log message", "ERROR", true);
 
-        test_03_02_3_func('A'); /* char -> int，重载决议：类型提升 > 类型转换 */
+        // test_03_02_3_func('A'); // char -> int，重载决议：类型提升 > 类型转换
+
+        // inline_constexpr();
+
+        static_assert(test_03_03_2_fibonacci()[10] == 55, "F(10) != 55");
+        static_assert(test_03_03_3_count_bits(0) == 0, "C(0)!=0");
+        static_assert(test_03_03_3_count_bits(7) == 3, "C(7)!=3");
 
         return 0;
     }

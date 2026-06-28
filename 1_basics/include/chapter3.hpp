@@ -93,6 +93,7 @@ namespace awesome_cpp::basics::chapter3 {
      * @param rhs 第二个整数
      * @return 两个整数的最大公约数
      * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
      */
     int test_03_00_1_gcd(int lhs, int rhs);
 
@@ -101,6 +102,7 @@ namespace awesome_cpp::basics::chapter3 {
      * @param n 包含素数的最大范围值
      * @return 函数状态值
      * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
      */
     int test_03_00_2_is_prime(int n);
 
@@ -177,6 +179,7 @@ namespace awesome_cpp::basics::chapter3 {
      * @param rhs 第二个双精度浮点数
      * @return int 函数状态值
      * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
      */
     int test_03_01_1_swap_values(double& lhs, double& rhs);
 
@@ -186,6 +189,7 @@ namespace awesome_cpp::basics::chapter3 {
      * @param rhs 第二个字符串
      * @return int 函数状态值
      * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
      */
     int test_03_01_1_swap_values(std::string& lhs, std::string& rhs);
     /**
@@ -247,6 +251,7 @@ namespace awesome_cpp::basics::chapter3 {
      * @param value2 第二个整数
      * @return int 函数状态值
      * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
      */
     int test_03_02_1_max_value(int value1, int value2);
 
@@ -256,6 +261,7 @@ namespace awesome_cpp::basics::chapter3 {
      * @param value2 第二个双精度浮点数
      * @return int 函数状态值
      * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
      */
     int test_03_02_1_max_value(double value1, double value2);
 
@@ -265,6 +271,7 @@ namespace awesome_cpp::basics::chapter3 {
      * @param value2 第二个C风格字符串
      * @return int 函数状态值
      * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
      */
     int test_03_02_1_max_value(const char* value1, const char* value2);
 
@@ -274,6 +281,7 @@ namespace awesome_cpp::basics::chapter3 {
      * @param level 日志级别，默认为"INFO"
      * @param show_timestamp 是否显示时间戳，默认为false
      * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problema
      */
     void test_03_02_2_log_message(const char* text, const char* level = "INFO",
                                   bool show_timestamp = false);
@@ -282,6 +290,7 @@ namespace awesome_cpp::basics::chapter3 {
      * @brief 函数重载测试（整数参数版本）
      * @param x 整数参数
      * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
      */
     void test_03_02_3_func(int x);
 
@@ -289,8 +298,179 @@ namespace awesome_cpp::basics::chapter3 {
      * @brief 函数重载测试（短整型参数版本）
      * @param x 短整型参数
      * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
      */
     void test_03_02_3_func(short x);
+
+    /**
+     * @brief @b 编译期函数：平方计算
+     *
+     * @note 该函数使用 @c constexpr 声明。
+     *       当实参是编译期常量时，可在编译期完成计算；
+     *       当实参是运行期变量时，也可以像普通函数一样运行期调用。
+     *
+     * @param x 待平方数
+     * @return 平方数
+     * @ingroup grp_1_basics_code
+     */
+    constexpr auto
+    square(const int x) -> int {
+        return x * x;
+    }
+
+    /**
+     * @brief @b 编译期函数：计算阶乘
+     数一样运行期调用。
+     * @note 方式1：迭代版本计算阶乘。
+     * @note 方式2：递归版本时间复杂度为O(2^n)，较高，建议用方式1。
+     *
+     * @param n 非负整数
+     * @return n的阶乘
+     * @ingroup grp_1_basics_code
+     */
+    constexpr auto
+    fib(const int n) -> int {
+        /* 方式1：迭代版本计算阶乘 */
+        int result{ 1 };
+        for (int i = 2; i <= n; ++i) {
+            result *= i;
+        }
+        return result;
+
+        /* 方式2：递归版本时间复杂度为O(2^n)，较高，建议用方式1 */
+        // if (n <= 1) {
+        //     return n;
+        // }
+        // return n * factorial(n - 1);
+    }
+
+    /**
+     * @brief @b 编译期函数：幂运算
+     * @param base 底数
+     * @param exp 指数
+     * @return base的exp次方
+     * @ingroup grp_1_basics_code
+     */
+    constexpr auto
+    power(const int base, const int exp) -> int {
+        /* 幂运算：计算base的exp次方 */
+        int result{ 1 };
+        for (int i = 0; i < exp; ++i) {
+            result *= base;
+        }
+        return result;
+    }
+
+    /**
+     * @brief @b 编译期函数：CRC8查找表生成
+     * @return CRC8查找表
+     * @ingroup grp_1_basics_code
+     */
+    constexpr auto
+    make_crc8_table() -> std::array<uint8_t, 256> {
+        // 初始化256个元素的CRC8查找表
+        std::array<uint8_t, 256> table{};
+        // 遍历所有可能的字节值（0-255）
+        for (int i = 0; i < 256; ++i) {
+            // 将索引转换为字节类型
+            auto byte = static_cast<uint8_t>(i);
+            // 对每个字节的8个位进行处理
+            for (int bit = 0; bit < 8; ++bit) {
+                // CRC8多项式为0x07
+                constexpr uint8_t kpoly{ 0x07 };
+                // 如果最高位为1，则左移一位并与多项式异或；否则仅左移一位
+                byte = byte & 0x80 ? byte << 1 ^ kpoly : byte << 1;
+            }
+            // 将计算结果存入查找表
+            table[i] = byte;
+        }
+        return table;
+    }
+
+    /**
+     * @brief @b 运行期函数：CRC8校验
+     * @param data 数据指针
+     * @param length 数据长度
+     * @return uint8_t CRC8校验值
+     * @ingroup grp_1_basics_code
+     */
+    uint8_t compute_crc8(const uint8_t* data, size_t length);
+
+    /**
+     * @brief inline 与 constexpr 函数应用的实现
+     * @ingroup grp_1_basics_code
+     */
+    void inline_constexpr();
+
+    /**
+     * @brief @b 编译器函数：求最大公约数
+     * @param lhs 左值
+     * @param rhs 右值
+     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
+     */
+    constexpr auto
+    test_03_03_1_gcd(int lhs, int rhs) {
+        lhs = std::abs(lhs);
+        rhs = std::abs(rhs);
+
+        while (rhs != 0) {
+            const int remainder{ lhs % rhs };
+            lhs = rhs;
+            rhs = remainder;
+        }
+        return lhs;
+    }
+
+    /**
+     * @brief @b 编译期函数：生成斐波那契数列
+     *
+     * @note
+     * - 使用 @c constexpr 在编译期计算并返回包含前30个斐波那契数的数组。
+     * - 斐波那契数列定义：
+     *   \f$ F(0) = 0,\ F(1) = 1,\ F(n) = F(n-1) + F(n-2) \f$（其中 \f$ n \ge 2
+     * \f$）。
+     * - 使用 @c if constexpr 在编译期进行边界检查，零运行时开销。
+     *
+     * @return std::array<uint32_t, 30> 包含前30个斐波那契数的数组
+     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
+     */
+    constexpr auto
+    test_03_03_2_fibonacci() -> std::array<uint32_t, 30> {
+        std::array<uint32_t, 30> fibonacci{};
+
+        if constexpr (!fibonacci.empty()) {
+            fibonacci[0] = 0;
+        }
+        if constexpr (fibonacci.size() > 1) {
+            fibonacci[1] = 1;
+        }
+
+        for (size_t i = 2; i < fibonacci.size(); ++i) {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        }
+        return fibonacci;
+    }
+
+    /**
+     * @brief @b 编译期函数：统计整数二进制表示中1的个数
+     * @note 使用 Brian Kernighan 技巧，循环次数等于1的个数。
+     * @param n 整数
+     * @return 二进制表示中1的个数
+     * @ingroup grp_1_basics_code
+     * @ingroup grp_1_basics_problems
+     */
+    constexpr int
+    test_03_03_3_count_bits(const int n) {
+        auto u = static_cast<unsigned int>(n);
+        int  cnt{ 0 };
+        while (u) {
+            u &= u - 1; /* u=&=(u-1) Brian Kernighan 技巧 */
+            ++cnt;
+        }
+        return cnt;
+    }
 
     /**
      * @brief 运行第三章第所有示例及测试
