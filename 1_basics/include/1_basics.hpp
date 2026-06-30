@@ -86,6 +86,16 @@
  */
 
 /**
+ * @defgroup grp_1_basics_ch4 第四章：指针与引用
+ * @brief 介绍 C++ 中的指针与引用，包括：
+ * - 指针基础
+ * - 指针运算与数组
+ * - 引用
+ * - 智能指针预告
+ * @ingroup grp_1_basics
+ */
+
+/**
  * @defgroup grp_1_basics_code 源码实现
  * @brief 该子项目涉及的核心功能实现
  * @ingroup grp_1_basics
@@ -131,6 +141,8 @@
 #include "chapter2.hpp"
 // 引入第三章相关的头文件：函数
 #include "chapter3.hpp"
+// 引入第四章相关的头文件：指针与引用
+#include "chapter4.hpp"
 
 #endif  // AWESOME_CPP_1_BASICS_HPP
 

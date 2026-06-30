@@ -24,6 +24,9 @@ add_executable(1_basics
         src/chapter3/passing.cpp
         src/chapter3/overload.cpp
         src/chapter3/inline_constexpr.cpp
+        include/chapter4.hpp
+        src/chapter4/run.cpp
+        src/chapter4/pointers.cpp
 )
 
 target_include_directories(1_basics
